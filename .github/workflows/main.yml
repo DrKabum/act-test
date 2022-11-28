@@ -1,0 +1,12 @@
+name: test workflow to try out act
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: say hello
+        run: echo Hello world
