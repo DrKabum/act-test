@@ -10,3 +10,29 @@ jobs:
     steps:
       - name: say hello
         run: echo Hello world
+
+  test-concurrently:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: say hello concurrently
+        run: echo Hello world concurrently
+
+  try-actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: try action
+        uses: actions/github-script@v6
+        with:
+          script: console.log('hello world in javascript')
+
+  test-after:
+    runs-on: ubuntu-latest
+    needs:
+      - test
+      - test-concurrently
+
+    steps:
+      - name: say hello at the end
+        run: echo Hello world at the end
