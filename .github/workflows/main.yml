@@ -11,7 +11,7 @@ jobs:
       - name: say hello
         run: echo Hello world
       - name: env variables
-        run: echo ${{ env.TEST }}
+        run: echo ${{ env.HELLO }}
 
   test-concurrently:
     runs-on: ubuntu-latest
